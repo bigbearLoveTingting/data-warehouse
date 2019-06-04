@@ -1,0 +1,37 @@
+server: 
+  # 端口号
+  port: 8084
+  # 是否启用压缩
+  compression: 
+    enabled: true
+  # tomcat配置
+  tomcat: 
+    uri-encoding: UTF-8
+
+spring:
+  mvc:
+    favicon:
+      enabled: false
+  main:
+    allow-bean-definition-overriding: true
+
+# hive配置
+hive: 
+  jdbc: jdbc:hive2://10.10.11.11:10000/pre_middle
+  type: com.alibaba.druid.pool.DruidDataSource
+  driver-class-name: org.apache.hive.jdbc.HiveDriver
+#  user: 
+#  password:
+  max-active: 5
+  initialSize: 3
+  maxWait: 60000
+  minIdle: 1
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: 300000
+  testWhileIdle: true
+  testOnBorrow: false
+  testOnReturn: false
+  poolPreparedStatements: true
+  maxOpenPreparedStatements: 50
+  removeAbandoned: true
+  removeAbandonedTimeout: 180
